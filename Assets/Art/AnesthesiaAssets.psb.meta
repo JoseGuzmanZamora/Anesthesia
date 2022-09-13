@@ -91,6 +91,160 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: Floor2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5628
+      y: 4
+      width: 792
+      height: 792
+    spriteID: c0ecac5ccce0f46f4ae8855445efcd33
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3523, y: -3815}
+  - name: Heart
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5628
+      y: 3324
+      width: 438
+      height: 411
+    spriteID: 150356dcb12574589a50b84a12af48fd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2510, y: -753}
+  - name: Wall2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5628
+      y: 2384
+      width: 462
+      height: 462
+    spriteID: b5807cca68074465f87149cb7cc461ed
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3884, y: -826}
+  - name: Wall1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5628
+      y: 2854
+      width: 462
+      height: 462
+    spriteID: 450fcaf0650f84fbe9efe022ce4efe08
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4445, y: -356}
+  - name: Floor1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5628
+      y: 804
+      width: 792
+      height: 792
+    spriteID: 93b3b7d59f8cd4b349b987bd93466c4f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4444, y: -3015}
+  - name: Door
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5012
+      y: 4
+      width: 608
+      height: 1203
+    spriteID: d792256356b074398bbb5db0d9540466
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2541, y: -2475}
+  - name: Player
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5628
+      y: 1604
+      width: 388
+      height: 772
+    spriteID: 5a2926257e13b4a5091b8b9f7b5e7db8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 5171, y: -2235}
   - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -102,7 +256,7 @@ ScriptedImporter:
       y: 4
       width: 5000
       height: 5000
-    spriteID: d9c0ee7b7271a463b82c8e5b39e9753e
+    spriteID: e67261b3d42764911b4b2c813b787b0d
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -132,12 +286,61 @@ ScriptedImporter:
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Floor2
+    spriteName: Floor2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c0ecac5ccce0f46f4ae8855445efcd33
+    layerID: 4
+    mosaicPosition: {x: 5628, y: 4}
+  - name: Heart
+    spriteName: Heart
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 150356dcb12574589a50b84a12af48fd
+    layerID: 11
+    mosaicPosition: {x: 5628, y: 3324}
+  - name: Wall2
+    spriteName: Wall2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b5807cca68074465f87149cb7cc461ed
+    layerID: 6
+    mosaicPosition: {x: 5628, y: 2384}
+  - name: Wall1
+    spriteName: Wall1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 450fcaf0650f84fbe9efe022ce4efe08
+    layerID: 5
+    mosaicPosition: {x: 5628, y: 2854}
+  - name: Floor1
+    spriteName: Floor1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 93b3b7d59f8cd4b349b987bd93466c4f
+    layerID: 3
+    mosaicPosition: {x: 5628, y: 804}
+  - name: Door
+    spriteName: Door
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d792256356b074398bbb5db0d9540466
+    layerID: 7
+    mosaicPosition: {x: 5012, y: 4}
+  - name: Player
+    spriteName: Player
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5a2926257e13b4a5091b8b9f7b5e7db8
+    layerID: 2
+    mosaicPosition: {x: 5628, y: 1604}
   - name: Background
     spriteName: Background
     isGroup: 0
     parentIndex: -1
-    spriteID: d9c0ee7b7271a463b82c8e5b39e9753e
-    layerID: 0
+    spriteID: e67261b3d42764911b4b2c813b787b0d
+    layerID: 1
     mosaicPosition: {x: 4, y: 4}
   characterData:
     bones: []
