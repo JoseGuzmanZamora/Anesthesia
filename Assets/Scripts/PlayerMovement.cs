@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool foundObject = false;
     [SerializeField] private float movementSpeed = 1;
     [SerializeField] private float movementCounter = 0;
     [SerializeField] private float increaseFactor = 0.5f;
@@ -58,6 +59,11 @@ public class PlayerMovement : MonoBehaviour
             heartRateText.text = hr.ToString();
             heartRateTimer = 0;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Triggered collision.");
+        foundObject = true;
     }
 
     private int GetHeartRate(double placement)

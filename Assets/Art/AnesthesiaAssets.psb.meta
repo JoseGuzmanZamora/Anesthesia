@@ -267,6 +267,28 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
+  - name: Thing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6024
+      y: 1604
+      width: 330
+      height: 330
+    spriteID: 1c6fa582dda9c4129a27064163236780
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 5531, y: -1676}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -286,6 +308,13 @@ ScriptedImporter:
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Thing
+    spriteName: Thing
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1c6fa582dda9c4129a27064163236780
+    layerID: 12
+    mosaicPosition: {x: 6024, y: 1604}
   - name: Floor2
     spriteName: Floor2
     isGroup: 0
