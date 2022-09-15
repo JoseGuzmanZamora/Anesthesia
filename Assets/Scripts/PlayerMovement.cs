@@ -7,12 +7,17 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public bool foundObject = false;
+    public bool woke = false;
+    public string foundDoor = "";
     [SerializeField] private float movementSpeed = 1;
     [SerializeField] private float movementCounter = 0;
     [SerializeField] private float increaseFactor = 0.5f;
     [SerializeField] private float decreaseFactor = 1f;
     [SerializeField] private float decreaseTimerLength = 0.1f;
     [SerializeField] private float horizontalFactor = 0.7f;
+    [SerializeField] private int hrThreshold = 110;
+    [SerializeField] private float deathThreshold = 5;
+    [SerializeField] private float thresholdTimer = 0;
     public Text heartRateText;
     private int minimumHeartRate = 70;
     private int maximumHeartRate = 200;
@@ -59,11 +64,24 @@ public class PlayerMovement : MonoBehaviour
             heartRateText.text = hr.ToString();
             heartRateTimer = 0;
         }
+
+        if (hr > hrThreshold)
+        {
+            thresholdTimer += Time.deltaTime;
+            if (thresholdTimer > deathThreshold)
+            {
+                woke = true;
+            }
+        }
+        else
+        {
+            thresholdTimer = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Triggered collision.");
-        foundObject = true;
+        if (other.tag == "DiscoveryObject") foundObject = true;
+        if (other.tag == "Door") foundDoor = other.name;
     }
 
     private int GetHeartRate(double placement)

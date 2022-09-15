@@ -16,12 +16,17 @@ public class MessagesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.foundObject);
         if (player.foundObject)
         {
             mainText.text = "You just found an object, very cool.";
             ShowMe();
             player.foundObject = false;
+        }
+
+        if (player.woke)
+        {
+            mainText.text = "Oops, it looks like you woke up...";
+            ShowMe();
         }
     }
 

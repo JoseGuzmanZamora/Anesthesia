@@ -40,6 +40,7 @@
      <Compile Include="Assets/Scripts/PlayerMovement.cs" />
      <Compile Include="Assets/Scripts/CameraController.cs" />
      <Compile Include="Assets/Scripts/MessagesController.cs" />
+     <Compile Include="Assets/Scripts/DoorPortal.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.32f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
