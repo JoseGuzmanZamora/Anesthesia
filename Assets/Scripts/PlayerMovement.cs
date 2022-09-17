@@ -24,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
     private float heartRateTimer = 0;
     private float decreaseTimer = 0;
     private const int SpeedCap = 7;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,6 +40,25 @@ public class PlayerMovement : MonoBehaviour
         var verticalPress = Input.GetAxis("Vertical");
         transform.position += 
             new Vector3(horizontalPress, verticalPress, transform.position.z) * (movementSpeed * Time.deltaTime);
+
+        // Flip and animation logic
+        if (horizontalPress > 0)
+        {
+            // we are walking to the right side
+            gameObject.transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+            anim.SetBool("isWalking", true);
+        }
+        else if (horizontalPress < 0)
+        {
+            // Normal
+            gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            // Idle animation
+            anim.SetBool("isWalking", false);
+        }
 
         var pressingDown = horizontalPress != 0 || verticalPress != 0;
 
