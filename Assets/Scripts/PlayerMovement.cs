@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private float decreaseTimer = 0;
     private const int SpeedCap = 7;
     private Animator anim;
+    public Animator heartRateAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         var hr = GetHeartRate(movementCounter);
+        heartRateAnim.SetInteger("heartRate", hr);
 
         if (heartRateTimer > 0.5f)
         {
