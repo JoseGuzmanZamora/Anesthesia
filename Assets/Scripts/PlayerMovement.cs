@@ -54,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
             gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             anim.SetBool("isWalking", true);
         }
+        else if (verticalPress != 0)
+        {
+            // Movement but in the vertical direction
+            anim.SetBool("isWalking", true);
+        }
         else
         {
             // Idle animation
