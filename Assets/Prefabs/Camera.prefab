@@ -97,3 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  minPosition: {x: 0, y: 0}
+  maxPosition: {x: 0, y: 0}
+  mapObject: {fileID: 0}
+  smoothing: 0.1
