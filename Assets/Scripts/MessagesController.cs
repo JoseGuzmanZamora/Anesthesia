@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MessagesController : MonoBehaviour
@@ -25,7 +26,7 @@ public class MessagesController : MonoBehaviour
 
         if (player.woke)
         {
-            mainText.text = "Oops, it looks like you woke up...";
+            mainText.text = @$"... You are no longer under the anesthesia effects. Good luck dealing with the pain. Bye.";
             ShowMe();
         }
     }
@@ -42,5 +43,10 @@ public class MessagesController : MonoBehaviour
         CanvasGroup cg = this.gameObject.GetComponent<CanvasGroup>();
         cg.interactable = false;
         cg.alpha = 0;
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

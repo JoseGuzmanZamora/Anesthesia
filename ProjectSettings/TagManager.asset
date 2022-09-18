@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - DiscoveryObject
+  - Capsule
   layers:
   - Default
   - TransparentFX

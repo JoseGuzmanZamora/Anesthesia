@@ -19,6 +19,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float deathThreshold = 5;
     [SerializeField] private float thresholdTimer = 0;
     public Text heartRateText;
+    public Text capsulesFoundText;
+    public Text secondsLeftText;
+    public GameObject capsulePrefab;
+    public int capsuleAmount;
+    public float secondsLeft;
+    public GameObject mapObject;
     private int minimumHeartRate = 70;
     private int maximumHeartRate = 200;
     private float heartRateTimer = 0;
@@ -26,10 +32,28 @@ public class PlayerMovement : MonoBehaviour
     private const int SpeedCap = 7;
     private Animator anim;
     public Animator heartRateAnim;
+    private int capsulesFound = 0;
     // Start is called before the first frame update
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+
+        // limits calculation
+        var mapSize = mapObject.GetComponent<Renderer>().bounds.size;
+        var smallGap = 3;
+        var maxY = (mapObject.transform.position.y + (mapSize.y / 2)) - smallGap;
+        var minY = (mapObject.transform.position.y - (mapSize.y / 2)) + smallGap;
+        var maxX = (mapObject.transform.position.x + (mapSize.x / 2)) - smallGap;
+        var minX = (mapObject.transform.position.x - (mapSize.x / 2)) + smallGap;
+
+        for (int i = 0; i < capsuleAmount; i++)
+        {
+            var tmpX = UnityEngine.Random.Range(minX, maxX);
+            var tempY = UnityEngine.Random.Range(minY, maxY);
+            Instantiate(capsulePrefab, new Vector3(tmpX, tempY, 0), Quaternion.identity);
+        }
+
+        capsulesFoundText.text = "0";
     }
 
     // Update is called once per frame
@@ -37,10 +61,18 @@ public class PlayerMovement : MonoBehaviour
     {
         heartRateTimer += Time.deltaTime;
         decreaseTimer += Time.deltaTime;
+        if (secondsLeft > 0)
+        {
+            secondsLeft -= Time.deltaTime;
+        }
+        else
+        {
+            woke = true;
+        }
         var horizontalPress = Input.GetAxis("Horizontal");
         var verticalPress = Input.GetAxis("Vertical");
         transform.position += 
-            new Vector3(horizontalPress, verticalPress, transform.position.z) * (movementSpeed * Time.deltaTime);
+            new Vector3(horizontalPress, verticalPress, transform.position.z).normalized * (movementSpeed * Time.deltaTime);
 
         // Flip and animation logic
         if (horizontalPress > 0)
@@ -104,11 +136,19 @@ public class PlayerMovement : MonoBehaviour
         {
             thresholdTimer = 0;
         }
+        secondsLeftText.text = Math.Round(secondsLeft, 2).ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "DiscoveryObject") foundObject = true;
         if (other.tag == "Door") foundDoor = other.name;
+
+        if (other.tag == "Capsule")
+        {
+            capsulesFound += 1;
+            capsulesFoundText.text = capsulesFound.ToString();
+            Destroy(other.gameObject);
+        }
     }
 
     private int GetHeartRate(double placement)
