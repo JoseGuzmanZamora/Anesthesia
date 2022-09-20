@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private const int SpeedCap = 7;
     private Animator anim;
     public Animator heartRateAnim;
-    private int capsulesFound = 0;
+    private int capsulesLeft = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +53,8 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(capsulePrefab, new Vector3(tmpX, tempY, 0), Quaternion.identity);
         }
 
-        capsulesFoundText.text = "0";
+        capsulesFoundText.text = capsuleAmount.ToString();
+        capsulesLeft = capsuleAmount;
     }
 
     // Update is called once per frame
@@ -145,8 +146,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.tag == "Capsule")
         {
-            capsulesFound += 1;
-            capsulesFoundText.text = capsulesFound.ToString();
+            capsulesLeft -= 1;
+            capsulesFoundText.text = capsulesLeft.ToString();
             Destroy(other.gameObject);
         }
     }
