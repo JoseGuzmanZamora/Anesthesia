@@ -8,6 +8,10 @@ TagManager:
   - DiscoveryObject
   - Capsule
   - GenericMessage
+  - ERDoor
+  - LockedDoor
+  - DeathMessage
+  - HallwayDoor
   layers:
   - Default
   - TransparentFX

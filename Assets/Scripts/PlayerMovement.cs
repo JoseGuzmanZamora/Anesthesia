@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
@@ -32,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
     private const int SpeedCap = 7;
     private Animator anim;
     public Animator heartRateAnim;
+    public Text noteObject;
+    private bool showNote = false;
+    private float noteCounter = 0;
     private int capsulesLeft = 0;
     // Start is called before the first frame update
     void Start()
@@ -55,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
 
         capsulesFoundText.text = capsuleAmount.ToString();
         capsulesLeft = capsuleAmount;
+
+        // Hide initial notes
+        if (noteObject != null) noteObject.gameObject.SetActive(showNote);
     }
 
     // Update is called once per frame
@@ -62,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     {
         heartRateTimer += Time.deltaTime;
         decreaseTimer += Time.deltaTime;
+        if (showNote) noteCounter += Time.deltaTime;
         if (secondsLeft > 0)
         {
             secondsLeft -= Time.deltaTime;
@@ -113,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
                 movementCounter -= (Time.deltaTime * decreaseFactor);
                 decreaseTimer = 0;
             }
-            movementSpeed = 3;
+            movementSpeed = 5;
         }
 
         var hr = GetHeartRate(movementCounter);
@@ -138,6 +146,14 @@ public class PlayerMovement : MonoBehaviour
             thresholdTimer = 0;
         }
         secondsLeftText.text = Math.Round(secondsLeft, 2).ToString();
+
+        // Check if we have to hide the note
+        if (noteCounter > 3)
+        {
+            showNote = false;
+            noteObject.gameObject.SetActive(showNote);
+            noteCounter = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -149,6 +165,46 @@ public class PlayerMovement : MonoBehaviour
             capsulesLeft -= 1;
             capsulesFoundText.text = capsulesLeft.ToString();
             Destroy(other.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "ERDoor")
+        {
+            if (capsulesLeft <= 0)
+            {
+                SceneManager.LoadScene("Level2", LoadSceneMode.Single);
+            }
+            else
+            {
+                noteObject.text = "You need to collect all capsules before entering the next room...";
+                showNote = true;
+                noteObject.gameObject.SetActive(showNote);
+            }
+        }
+        else if (other.gameObject.tag == "LockedDoor")
+        {
+            noteObject.text = "This is locked...";
+            showNote = true;
+            noteObject.gameObject.SetActive(showNote);
+        }
+        else if (other.gameObject.tag == "DeathMessage")
+        {
+            //death for not following instructions
+            woke = true;
+        }
+        else if (other.gameObject.tag == "HallwayDoor")
+        {
+            if (capsulesLeft <= 0)
+            {
+                SceneManager.LoadScene("Level3", LoadSceneMode.Single);
+            }
+            else
+            {
+                noteObject.text = "You need to collect all capsules before entering the next room...";
+                showNote = true;
+                noteObject.gameObject.SetActive(showNote);
+            }
         }
     }
 
