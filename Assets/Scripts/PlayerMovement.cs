@@ -206,6 +206,23 @@ public class PlayerMovement : MonoBehaviour
                 noteObject.gameObject.SetActive(showNote);
             }
         }
+        else if (other.gameObject.tag == "ChillDoor")
+        {
+            if (capsulesLeft <= 0)
+            {
+                SceneManager.LoadScene("Level4", LoadSceneMode.Single);
+            }
+            else
+            {
+                noteObject.text = "You need to collect all capsules before entering the next room...";
+                showNote = true;
+                noteObject.gameObject.SetActive(showNote);
+            }
+        }
+        else if (other.gameObject.tag == "FinalDoor")
+        {
+            SceneManager.LoadScene("Level5Boss", LoadSceneMode.Single);
+        }
     }
 
     private int GetHeartRate(double placement)

@@ -12,6 +12,8 @@ TagManager:
   - LockedDoor
   - DeathMessage
   - HallwayDoor
+  - ChillDoor
+  - FinalDoor
   layers:
   - Default
   - TransparentFX
