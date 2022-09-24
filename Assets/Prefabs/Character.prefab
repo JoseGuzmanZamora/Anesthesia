@@ -403,17 +403,25 @@ MonoBehaviour:
   foundObject: 0
   woke: 0
   foundDoor: 
-  movementSpeed: 3
+  movementSpeed: 5
   movementCounter: 0
   increaseFactor: 0.07
-  decreaseFactor: 0.5
-  decreaseTimerLength: 0.5
+  decreaseFactor: 1.5
+  decreaseTimerLength: 0.4
   horizontalFactor: 1
-  hrThreshold: 110
-  deathThreshold: 5
+  hrThreshold: 130
+  deathThreshold: 10
   thresholdTimer: 0
   heartRateText: {fileID: 0}
+  capsulesFoundText: {fileID: 0}
+  secondsLeftText: {fileID: 0}
+  capsulePrefab: {fileID: 1807273767966643646, guid: 49bb9917f721648ebadca19b117f0562, type: 3}
+  capsuleAmount: 5
+  secondsLeft: 100
+  mapObject: {fileID: 0}
   heartRateAnim: {fileID: 0}
+  noteObject: {fileID: 0}
+  doorParent: {fileID: 0}
 --- !u!1 &9150006287633497087
 GameObject:
   m_ObjectHideFlags: 0

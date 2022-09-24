@@ -563,21 +563,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1795532343}
     - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
-      propertyPath: hrThreshold
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
       propertyPath: secondsLeft
-      value: 100
+      value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
-      propertyPath: capsuleAmount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
-      propertyPath: capsulePrefab
-      value: 
-      objectReference: {fileID: 1807273767966643646, guid: 49bb9917f721648ebadca19b117f0562, type: 3}
     - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
       propertyPath: heartRateAnim
       value: 
@@ -587,18 +575,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 135752288}
     - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
-      propertyPath: movementSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
-      propertyPath: deathThreshold
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
-      propertyPath: decreaseFactor
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
       propertyPath: secondsLeftText
       value: 
       objectReference: {fileID: 1488373812}
@@ -606,9 +582,9 @@ PrefabInstance:
       propertyPath: capsulesFoundText
       value: 
       objectReference: {fileID: 522034070}
-    - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
-      propertyPath: decreaseTimerLength
-      value: 0.4
+    - target: {fileID: 1634439918, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9150006286623017300, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
       propertyPath: m_Name
@@ -723,7 +699,7 @@ MonoBehaviour:
     4. Jump into other
     rooms and find your bed
 
-    5. Don''t let your heart betray you'
+    5. Please don''t go above 130 BPM'
 --- !u!222 &1131305772
 CanvasRenderer:
   m_ObjectHideFlags: 0

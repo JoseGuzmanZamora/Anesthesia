@@ -34,9 +34,13 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     public Animator heartRateAnim;
     public Text noteObject;
+    public GameObject doorParent;
     private bool showNote = false;
     private float noteCounter = 0;
     private int capsulesLeft = 0;
+    private List<Transform> availableDoors = new List<Transform>();
+    private Transform selectedDoor = null;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,26 +66,30 @@ public class PlayerMovement : MonoBehaviour
 
         // Hide initial notes
         if (noteObject != null) noteObject.gameObject.SetActive(showNote);
+
+        // If this is the boss fight, prepare door logic
+        if (doorParent != null)
+        {
+            foreach (Transform child in doorParent.transform)
+            {
+                availableDoors.Add(child);
+            }
+
+            // This is the selected door
+            selectedDoor = availableDoors[UnityEngine.Random.Range(0, availableDoors.Count - 1)];
+            Debug.Log(selectedDoor.name);
+        }
+
+        rb = GetComponent<Rigidbody2D> ();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        heartRateTimer += Time.deltaTime;
-        decreaseTimer += Time.deltaTime;
-        if (showNote) noteCounter += Time.deltaTime;
-        if (secondsLeft > 0)
-        {
-            secondsLeft -= Time.deltaTime;
-        }
-        else
-        {
-            woke = true;
-        }
+    private void FixedUpdate() {
         var horizontalPress = Input.GetAxis("Horizontal");
         var verticalPress = Input.GetAxis("Vertical");
-        transform.position += 
-            new Vector3(horizontalPress, verticalPress, transform.position.z).normalized * (movementSpeed * Time.deltaTime);
+        //transform.position += 
+        //    new Vector3(horizontalPress, verticalPress, transform.position.z).normalized * (movementSpeed * Time.deltaTime);
+        var newPosition = new Vector3(horizontalPress, verticalPress, transform.position.z).normalized * (movementSpeed * Time.deltaTime);
+        rb.MovePosition(transform.position + newPosition);
 
         // Flip and animation logic
         if (horizontalPress > 0)
@@ -122,6 +130,22 @@ public class PlayerMovement : MonoBehaviour
                 decreaseTimer = 0;
             }
             movementSpeed = 5;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        heartRateTimer += Time.deltaTime;
+        decreaseTimer += Time.deltaTime;
+        if (showNote) noteCounter += Time.deltaTime;
+        if (secondsLeft > 0)
+        {
+            secondsLeft -= Time.deltaTime;
+        }
+        else
+        {
+            woke = true;
         }
 
         var hr = GetHeartRate(movementCounter);
@@ -222,6 +246,54 @@ public class PlayerMovement : MonoBehaviour
         else if (other.gameObject.tag == "FinalDoor")
         {
             SceneManager.LoadScene("Level5Boss", LoadSceneMode.Single);
+        }
+        // Finally the simple boss door logic
+        else if (other.gameObject.tag == "RandomDoor")
+        {
+            // Check if it is the selected door or another random door
+            if (other.transform.name == selectedDoor.name)
+            {
+                if (capsulesLeft <= 0)
+                {
+                    noteObject.text = "You won the game";
+                    showNote = true;
+                    noteObject.gameObject.SetActive(showNote);
+                }
+                else
+                {
+                    noteObject.text = "You found it! Get the capsules and come back!";
+                    showNote = true;
+                    noteObject.gameObject.SetActive(showNote);
+                }
+            }
+            else
+            {
+                // Grab another random door :) and move the player there
+                Transform newDoor = null;
+                var isSameDoor = true;
+                var isWinnerDoor = true;
+                // Just make sure the player is not being transported to the same door or the winner door
+                while (isSameDoor || isWinnerDoor)
+                {
+                    var randomDoor = availableDoors[UnityEngine.Random.Range(0, availableDoors.Count - 1)];
+                    isSameDoor = randomDoor.name == other.transform.name;
+                    isWinnerDoor = randomDoor.name == selectedDoor.name;
+                    newDoor = randomDoor;
+                }
+
+                // Transform the character to the new door
+                // just offset a little bit because of the collider
+                if (newDoor.position.x > 0)
+                {
+                    // Offset to the left
+                    transform.position = new Vector3(newDoor.position.x - 2.5f, newDoor.position.y, 0);
+                }
+                else
+                {
+                    // Offset to the right
+                    transform.position = new Vector3(newDoor.position.x + 2.5f, newDoor.position.y, 0);
+                }
+            }
         }
     }
 

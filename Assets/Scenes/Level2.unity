@@ -1100,7 +1100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
       propertyPath: capsuleAmount
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1634439916, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
       propertyPath: capsulePrefab

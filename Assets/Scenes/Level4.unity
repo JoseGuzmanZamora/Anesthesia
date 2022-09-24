@@ -317,7 +317,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -71, y: -84}
-  m_SizeDelta: {x: 358.3651, y: 106.878296}
+  m_SizeDelta: {x: 554.01, y: 239.6}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &515136472
 MonoBehaviour:
@@ -341,7 +341,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3911ab1e0533b4970a5e2dd60ff63d56, type: 3}
-    m_FontSize: 30
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Take some time to relax, you may need it...
+  m_Text: Take some time to relax, you might need it...
 --- !u!222 &515136473
 CanvasRenderer:
   m_ObjectHideFlags: 0
