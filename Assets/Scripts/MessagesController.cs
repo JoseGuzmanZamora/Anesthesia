@@ -23,12 +23,12 @@ public class MessagesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.woke && gameObject.tag == "GenericMessage")
+        if (player != null && player.woke && gameObject.tag == "GenericMessage")
         {
             mainText.text = @$"... You are no longer under the anesthesia effects. Good luck dealing with the pain. Bye.";
             ShowMe();
         }
-        else if (player.woke && gameObject.tag == "DeathMessage")
+        else if (player != null && player.woke && gameObject.tag == "DeathMessage")
         {
             mainText.text = @$"... It said DON'T ENTER :( why don't you follow instructions?";
             ShowMe();
@@ -56,5 +56,20 @@ public class MessagesController : MonoBehaviour
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+    }
+
+    public void ToMenu()
+    {
+        SceneManager.LoadScene("Intro", LoadSceneMode.Single);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
