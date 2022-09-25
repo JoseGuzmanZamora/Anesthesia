@@ -7,6 +7,7 @@ public class ParentController : MonoBehaviour
     public MessagesController genericMessage;
     public MessagesController instructionsMessage;
     public MessagesController fastMenuMessage;
+    public MessagesController deathMessage;
     public bool pausedGame = false;
     public GameObject pauseButton;
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class ParentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var messagesShown = (genericMessage?.shown ?? false) || (instructionsMessage?.shown ?? false) || (fastMenuMessage?.shown ?? false);
+        var messagesShown = (genericMessage?.shown ?? false) || (instructionsMessage?.shown ?? false) || (fastMenuMessage?.shown ?? false) || (deathMessage?.shown ?? false);
 
         if (messagesShown)
         {

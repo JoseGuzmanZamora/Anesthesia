@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool foundObject = false;
     public bool woke = false;
+    public bool instructions = false;
     public string foundDoor = "";
     [SerializeField] private float movementSpeed = 1;
     [SerializeField] private float movementCounter = 0;
@@ -42,10 +43,15 @@ public class PlayerMovement : MonoBehaviour
     private List<Transform> availableDoors = new List<Transform>();
     private Transform selectedDoor = null;
     private Rigidbody2D rb;
+    private AudioSource audioS;
+    public AudioClip heartBeat;
+    public AudioClip normalClip;
     // Start is called before the first frame update
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        audioS = gameObject.GetComponent<AudioSource>();
+        audioS.clip = normalClip;
 
         // limits calculation
         var mapSize = mapObject.GetComponent<Renderer>().bounds.size;
@@ -164,10 +170,19 @@ public class PlayerMovement : MonoBehaviour
             {
                 woke = true;
             }
+
+            audioS.clip = heartBeat;
+            audioS.volume = 1;
+            if (!audioS.isPlaying)
+            {
+                audioS.Play();
+            }
         }
         else
         {
             thresholdTimer = 0;
+            if (audioS.clip == heartBeat) audioS.Stop();
+            audioS.clip = normalClip;
         }
         secondsLeftText.text = Math.Round(secondsLeft, 2).ToString();
 
@@ -188,6 +203,9 @@ public class PlayerMovement : MonoBehaviour
         {
             capsulesLeft -= 1;
             capsulesFoundText.text = capsulesLeft.ToString();
+            audioS.clip = normalClip;
+            audioS.volume = 0.09f;
+            audioS.Play();
             Destroy(other.gameObject);
         }
     }
@@ -216,7 +234,7 @@ public class PlayerMovement : MonoBehaviour
         else if (other.gameObject.tag == "DeathMessage")
         {
             //death for not following instructions
-            woke = true;
+            instructions = true;
         }
         else if (other.gameObject.tag == "HallwayDoor")
         {

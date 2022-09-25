@@ -441,6 +441,10 @@ PrefabInstance:
       value: -43.19995
       objectReference: {fileID: 0}
     - target: {fileID: 3517766732424027099, guid: 76a498a676b0c4897b7438ad0bdde476, type: 3}
+      propertyPath: deathMessage
+      value: 
+      objectReference: {fileID: 1375207440}
+    - target: {fileID: 3517766732424027099, guid: 76a498a676b0c4897b7438ad0bdde476, type: 3}
       propertyPath: fastMenuMessage
       value: 
       objectReference: {fileID: 363519232}
@@ -1166,6 +1170,10 @@ PrefabInstance:
       propertyPath: decreaseTimerLength
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 6405948529632648267, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
+      propertyPath: Priority
+      value: 77
+      objectReference: {fileID: 0}
     - target: {fileID: 9150006286623017300, guid: ba059597fe6144311b844be9e4f3c76b, type: 3}
       propertyPath: m_Name
       value: Character
@@ -1559,7 +1567,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1375207440}
         m_TargetAssemblyTypeName: MessagesController, Assembly-CSharp
-        m_MethodName: HideMe
+        m_MethodName: ToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1774,3 +1782,60 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1001 &2024607153
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8320963281414482101, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_Name
+      value: Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320963281414482103, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d8cbf2b6aa2f420280e81399744472d, type: 3}

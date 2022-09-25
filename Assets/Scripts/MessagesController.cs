@@ -29,7 +29,7 @@ public class MessagesController : MonoBehaviour
             mainText.text = @$"... You are no longer under the anesthesia effects. Good luck dealing with the pain. Bye.";
             ShowMe();
         }
-        else if (player != null && player.woke && gameObject.tag == "DeathMessage")
+        else if (player != null && player.instructions && gameObject.tag == "DeathMessage")
         {
             mainText.text = @$"... It said DON'T ENTER :( why don't you follow instructions?";
             ShowMe();

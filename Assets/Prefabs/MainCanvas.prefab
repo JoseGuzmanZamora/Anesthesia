@@ -523,7 +523,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6684187413765239812}
         m_TargetAssemblyTypeName: MessagesController, Assembly-CSharp
-        m_MethodName: HideMe
+        m_MethodName: RestartScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1570,7 +1570,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6684187413765239812}
         m_TargetAssemblyTypeName: MessagesController, Assembly-CSharp
-        m_MethodName: HideMe
+        m_MethodName: ToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1706,9 +1706,9 @@ MonoBehaviour:
   genericMessage: {fileID: 6684187413765239812}
   instructionsMessage: {fileID: 0}
   fastMenuMessage: {fileID: 0}
+  deathMessage: {fileID: 0}
   pausedGame: 0
   pauseButton: {fileID: 2671125116235020408}
-  sceneManager: {fileID: 7271479572698996654, guid: bb583bd1b4d0047a489b9234924cab48, type: 3}
 --- !u!1 &6684187413513530236
 GameObject:
   m_ObjectHideFlags: 0
