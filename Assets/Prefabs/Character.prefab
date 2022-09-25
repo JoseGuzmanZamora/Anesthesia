@@ -422,6 +422,7 @@ MonoBehaviour:
   heartRateAnim: {fileID: 0}
   noteObject: {fileID: 0}
   doorParent: {fileID: 0}
+  sceneManager: {fileID: 7271479572698996654, guid: bb583bd1b4d0047a489b9234924cab48, type: 3}
 --- !u!1 &9150006287633497087
 GameObject:
   m_ObjectHideFlags: 0

@@ -254,6 +254,7 @@ MonoBehaviour:
   mainText: {fileID: 0}
   hideOnStart: 1
   shown: 1
+  sceneManager: {fileID: 7271479572698996654, guid: bb583bd1b4d0047a489b9234924cab48, type: 3}
 --- !u!225 &8690397857037807773
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1707,6 +1708,7 @@ MonoBehaviour:
   fastMenuMessage: {fileID: 0}
   pausedGame: 0
   pauseButton: {fileID: 2671125116235020408}
+  sceneManager: {fileID: 7271479572698996654, guid: bb583bd1b4d0047a489b9234924cab48, type: 3}
 --- !u!1 &6684187413513530236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1884,7 @@ MonoBehaviour:
   mainText: {fileID: 6684187412368566600}
   hideOnStart: 1
   shown: 1
+  sceneManager: {fileID: 7271479572698996654, guid: bb583bd1b4d0047a489b9234924cab48, type: 3}
 --- !u!225 &6684187413765239813
 CanvasGroup:
   m_ObjectHideFlags: 0

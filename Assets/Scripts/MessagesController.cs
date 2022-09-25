@@ -12,6 +12,7 @@ public class MessagesController : MonoBehaviour
     public bool shown = true;
     private RectTransform canvasTransform;
     private Vector3 originalTransform;
+    public LevelChanger sceneManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,17 +56,20 @@ public class MessagesController : MonoBehaviour
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        sceneManager.FadeToLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+        sceneManager.FadeToLevel(1);
+        //SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
 
     public void ToMenu()
     {
-        SceneManager.LoadScene("Intro", LoadSceneMode.Single);
+        sceneManager.FadeToLevel(0);
+        //SceneManager.LoadScene("Intro", LoadSceneMode.Single);
     }
 
     public void ExitGame()

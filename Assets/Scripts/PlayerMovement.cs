@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator heartRateAnim;
     public Text noteObject;
     public GameObject doorParent;
+    public LevelChanger sceneManager;
     private bool showNote = false;
     private float noteCounter = 0;
     private int capsulesLeft = 0;
@@ -77,7 +78,6 @@ public class PlayerMovement : MonoBehaviour
 
             // This is the selected door
             selectedDoor = availableDoors[UnityEngine.Random.Range(0, availableDoors.Count - 1)];
-            Debug.Log(selectedDoor.name);
         }
 
         rb = GetComponent<Rigidbody2D> ();
@@ -197,7 +197,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (capsulesLeft <= 0)
             {
-                SceneManager.LoadScene("Level2", LoadSceneMode.Single);
+                sceneManager.FadeToLevel(2);
+                //SceneManager.LoadScene("Level2", LoadSceneMode.Single);
             }
             else
             {
@@ -221,7 +222,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (capsulesLeft <= 0)
             {
-                SceneManager.LoadScene("Level3", LoadSceneMode.Single);
+                sceneManager.FadeToLevel(3);
+                //SceneManager.LoadScene("Level3", LoadSceneMode.Single);
             }
             else
             {
@@ -234,7 +236,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (capsulesLeft <= 0)
             {
-                SceneManager.LoadScene("Level4", LoadSceneMode.Single);
+                sceneManager.FadeToLevel(4);
+                //SceneManager.LoadScene("Level4", LoadSceneMode.Single);
             }
             else
             {
@@ -245,6 +248,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (other.gameObject.tag == "FinalDoor")
         {
+            sceneManager.FadeToLevel(5);
             SceneManager.LoadScene("Level5Boss", LoadSceneMode.Single);
         }
         // Finally the simple boss door logic
@@ -258,6 +262,7 @@ public class PlayerMovement : MonoBehaviour
                     noteObject.text = "You won the game";
                     showNote = true;
                     noteObject.gameObject.SetActive(showNote);
+                    sceneManager.FadeToLevel(6);
                 }
                 else
                 {
