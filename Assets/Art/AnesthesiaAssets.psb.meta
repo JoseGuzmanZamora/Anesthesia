@@ -25,6 +25,7 @@ ScriptedImporter:
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -46,6 +47,7 @@ ScriptedImporter:
     flipbookRows: 0
     flipbookColumns: 0
     ignorePngGamma: 0
+    cookieMode: 0
     filterMode: 1
     aniso: 1
     mipBias: 0
@@ -79,7 +81,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -91,6 +92,27 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: Thing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6024
+      y: 1604
+      width: 330
+      height: 330
+    spriteID: 1c6fa582dda9c4129a27064163236780
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 5531, y: -1676}
   - name: Floor2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -103,7 +125,6 @@ ScriptedImporter:
       width: 792
       height: 792
     spriteID: c0ecac5ccce0f46f4ae8855445efcd33
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -125,7 +146,6 @@ ScriptedImporter:
       width: 438
       height: 411
     spriteID: 150356dcb12574589a50b84a12af48fd
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,7 +167,6 @@ ScriptedImporter:
       width: 462
       height: 462
     spriteID: b5807cca68074465f87149cb7cc461ed
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -169,7 +188,6 @@ ScriptedImporter:
       width: 462
       height: 462
     spriteID: 450fcaf0650f84fbe9efe022ce4efe08
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -191,7 +209,6 @@ ScriptedImporter:
       width: 792
       height: 792
     spriteID: 93b3b7d59f8cd4b349b987bd93466c4f
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -213,7 +230,6 @@ ScriptedImporter:
       width: 608
       height: 1203
     spriteID: d792256356b074398bbb5db0d9540466
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -235,7 +251,6 @@ ScriptedImporter:
       width: 388
       height: 772
     spriteID: 5a2926257e13b4a5091b8b9f7b5e7db8
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -257,7 +272,6 @@ ScriptedImporter:
       width: 5000
       height: 5000
     spriteID: e67261b3d42764911b4b2c813b787b0d
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -267,45 +281,34 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
-  - name: Thing
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 6024
-      y: 1604
-      width: 330
-      height: 330
-    spriteID: 1c6fa582dda9c4129a27064163236780
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 5531, y: -1676}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
   platformSettings: []
   mosaicLayers: 1
+  characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 2048
-  importedTextureHeight: 2048
-  documentSize: {x: 5000, y: 5000}
+  layerMappingOption: 2
+  generatePhysicsShape: 0
   paperDollMode: 0
   keepDupilcateSpriteName: 0
+  skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
-  textureActualWidth: 8192
-  textureActualHeight: 8192
   spritePackingTag: 
   resliceFromLayer: 0
-  characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
   - name: Thing
@@ -315,6 +318,9 @@ ScriptedImporter:
     spriteID: 1c6fa582dda9c4129a27064163236780
     layerID: 12
     mosaicPosition: {x: 6024, y: 1604}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Floor2
     spriteName: Floor2
     isGroup: 0
@@ -322,6 +328,9 @@ ScriptedImporter:
     spriteID: c0ecac5ccce0f46f4ae8855445efcd33
     layerID: 4
     mosaicPosition: {x: 5628, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Heart
     spriteName: Heart
     isGroup: 0
@@ -329,6 +338,9 @@ ScriptedImporter:
     spriteID: 150356dcb12574589a50b84a12af48fd
     layerID: 11
     mosaicPosition: {x: 5628, y: 3324}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Wall2
     spriteName: Wall2
     isGroup: 0
@@ -336,6 +348,9 @@ ScriptedImporter:
     spriteID: b5807cca68074465f87149cb7cc461ed
     layerID: 6
     mosaicPosition: {x: 5628, y: 2384}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Wall1
     spriteName: Wall1
     isGroup: 0
@@ -343,6 +358,9 @@ ScriptedImporter:
     spriteID: 450fcaf0650f84fbe9efe022ce4efe08
     layerID: 5
     mosaicPosition: {x: 5628, y: 2854}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Floor1
     spriteName: Floor1
     isGroup: 0
@@ -350,6 +368,9 @@ ScriptedImporter:
     spriteID: 93b3b7d59f8cd4b349b987bd93466c4f
     layerID: 3
     mosaicPosition: {x: 5628, y: 804}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Door
     spriteName: Door
     isGroup: 0
@@ -357,6 +378,9 @@ ScriptedImporter:
     spriteID: d792256356b074398bbb5db0d9540466
     layerID: 7
     mosaicPosition: {x: 5012, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Player
     spriteName: Player
     isGroup: 0
@@ -364,6 +388,9 @@ ScriptedImporter:
     spriteID: 5a2926257e13b4a5091b8b9f7b5e7db8
     layerID: 2
     mosaicPosition: {x: 5628, y: 1604}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Background
     spriteName: Background
     isGroup: 0
@@ -371,13 +398,14 @@ ScriptedImporter:
     spriteID: e67261b3d42764911b4b2c813b787b0d
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
-  characterData:
-    bones: []
-    parts: []
-    dimension: {x: 0, y: 0}
-    characterGroups: []
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
   generateGOHierarchy: 0
   textureAssetName: AnesthesiaAssets Texture
   prefabAssetName: AnesthesiaAssets Prefab
   spriteLibAssetName: AnesthesiaAssets Sprite Lib
+  skeletonAssetName: 
   secondarySpriteTextures: []

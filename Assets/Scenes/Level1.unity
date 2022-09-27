@@ -811,9 +811,9 @@ MonoBehaviour:
     3. Watch the time constraint
 
     4. Jump into other
-    rooms and find your bed
+    rooms and find the final hallway
 
-    5. Please don''t go above 130 BPM'
+    5. PLEASE don''t go above 130 BPM'
 --- !u!222 &1131305772
 CanvasRenderer:
   m_ObjectHideFlags: 0
